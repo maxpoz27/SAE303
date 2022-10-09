@@ -11,28 +11,33 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <navmenu></navmenu>
-    <div class="container form col-md-4">
-      <form class="border border-primary" action="index.html" method="post">
-        <div>
-          <label for="Nom">Nom:</label>
-          <input required class="form-control" type="text" name="Nom" placeholder="Nom">
-        </div>
-        <div>
-          <label for="Prenom">Prenom:</label>
-          <input required class="form-control" type="text" name="Prenom" placeholder="Prenom">
-        </div>
-        <div>
-          <label for="Mail">Mail:</label>
-          <input required class="form-control" type="email" name="Mail" placeholder="Mail">
-        </div>
-        <div>
-          <label for="Message">Message:</label>
-          <textarea class="form-control" name="Message" rows="8" placeholder="Message" cols="80"></textarea>
-        </div>
-        <div>
-          <button class="btn btn-primary"type="submit">Envoyer</button>
-        </div>
-      </form>
+    <div class="container">
+      <div class="col-sm-12">
+        <p class="h2">Contactez nous</p>
+      </div>
+      <div class="form col-lg-6">
+        <form class="border border-primary" action="index.html" method="post">
+          <div>
+            <label for="Nom">Nom:</label>
+            <input required class="form-control" type="text" name="Nom" placeholder="Nom">
+          </div>
+          <div>
+            <label for="Prenom">Prenom:</label>
+            <input required class="form-control" type="text" name="Prenom" placeholder="Prenom">
+          </div>
+          <div>
+            <label for="Mail">Mail:</label>
+            <input required class="form-control" type="email" name="Mail" placeholder="Mail">
+          </div>
+          <div>
+            <label for="Message">Message:</label>
+            <textarea class="form-control" name="Message" rows="8" placeholder="Message" cols="80"></textarea>
+          </div>
+          <div>
+            <button class="btn btn-primary"type="submit">Envoyer</button>
+          </div>
+        </form>
+      </div>
     </div>
     <foot></foot>
     <script type="text/javascript" src="../dist/js/index.js"></script>
