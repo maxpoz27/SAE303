@@ -4,7 +4,7 @@ const footer = `
   <div class="container footer">
     <small><a href="">Mentions legales</a></small>
     <p> SAE303 Pozdnyakov, Vergeaud, Humeau </p>
-    <div class="reseaux row">
+    <div class="row">
       <a href="#">
         <img src="../dist/img/instagram-32.svg" alt="LogoI">
       </a>
@@ -25,7 +25,7 @@ const articles = `
   <article :id="article.id"  v-for="article in articles">
     <img :src="article.image" alt="image d'article">
     <p>{{ article.description }}</p>
-    <a :key="article.id" :id="article.id" :href='article.path'>
+    <a :key="article.id" :id="article.id" :href='article.path+article.id'>
     lire la suite
     </a>
   </article>
@@ -45,7 +45,7 @@ const app = Vue.createApp({
       <img src="../dist/img/logo-placeholder.png" alt="Logo">
     </a>
   </div>
-  <nav class="d-flex justify-content-between">
+  <nav class="d-flex justify-content-between border-bottom">
     <a class="btn" v-for="tab in tabs"  :href="tab.path">{{tab.name}}</a>
   </nav>
   </header>
@@ -79,13 +79,6 @@ const app = Vue.createApp({
 
 
 
-let liens = $('a')
-liens.each(function(){
-  if($(this).html()===document.title){
-    $(this).css({'text-decoration': 'underline'})
-  }
-})
-
 
 
 let actualites = $('article')
@@ -97,8 +90,21 @@ actualites.each(function(){
     p.css('overflow','visible')
     p.css('white-space','normal')
     article.css('height','auto')
+    lien.hide()
   })
 })
 
-let reseaux = $('.reseaux')
-reseaux.children().css('width','auto')
+let liens = $('a')
+liens.each(function(){
+  if($(this).html()===document.title){
+    $(this).css({'text-decoration': 'underline'})
+  }
+})
+$( document ).ready(function() {
+  let reseaux = $('.reseaux')
+  reseaux.children().css('width','auto')
+  let afterRow = $('.row')
+  afterRow.children().css('width','auto')
+  afterRow.children().css('margin','3px')
+  afterRow.css('justify-content','center')
+})

@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Accueil</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="../dist/css/index.css">
-    <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
-  </head>
-  <body class="d-flex flex-column min-vh-100">
-    <navmenu></navmenu>
-    <div class="container main">
-        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, ab ut nobis iusto consequatur qui quos accusamus delectus sit enim inventore beatae, eligendi doloribus vitae modi repellat dignissimos est quaerat?</span>
-        <span>Pariatur praesentium maiores maxime quae itaque repudiandae eaque, laboriosam, laudantium quia necessitatibus, tenetur ducimus iste, exercitationem veniam omnis eveniet magnam. Nulla at, tempore in expedita delectus adipisci. Magni aliquam, vero.</span>
-        <span>Odio dolor velit, accusamus animi optio delectus ut! Dolorem officia aperiam blanditiis, fuga tenetur asperiores, similique sint doloremque atque aliquam necessitatibus! Dicta iure a quaerat architecto, inventore suscipit, voluptatem sed.</span>
-        <span>Optio fuga vero itaque soluta voluptates id recusandae eos, non similique quisquam consectetur autem, a dolore, molestiae eius! Praesentium dolorem adipisci itaque veritatis molestias quibusdam iusto, quisquam magni placeat nam.</span>
-        <span>Dolor voluptate amet consequatur iure, a veniam ipsam, nobis laboriosam doloribus non. Repudiandae officia aspernatur dolorum, eveniet assumenda recusandae repellendus! Dolorum accusantium harum perferendis iure quibusdam illo. Quasi, ullam, dignissimos.</span></p>
-        <div class="video">
-          <iframe class=".embed-responsive-item" src="../dist/video/Placeholder.mp4" width="720" height="360"></iframe>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil</title>
+  <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="../dist/css/index.css">
+  <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <navmenu></navmenu>
+  <div id="carouselIndicators" class="main carousel slide container" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../dist/img/plafond.png" class="d-block w-100" alt="photo1">
+      </div>
+      <div class="carousel-item">
+        <img src="../dist/img/scene.png" class="d-block w-100" alt="photo2">
+      </div>
+      <div class="carousel-item">
+        <img src="../dist/img/sieges.png" class="d-block w-100" alt="photo3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container ">
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, ab ut nobis iusto consequatur qui quos accusamus delectus sit enim inventore beatae, eligendi doloribus vitae modi repellat dignissimos est quaerat?</span>
+      <span>Pariatur praesentium maiores maxime quae itaque repudiandae eaque, laboriosam, laudantium quia necessitatibus, tenetur ducimus iste, exercitationem veniam omnis eveniet magnam. Nulla at, tempore in expedita delectus adipisci. Magni aliquam, vero.</span>
+      <span>Odio dolor velit, accusamus animi optio delectus ut! Dolorem officia aperiam blanditiis, fuga tenetur asperiores, similique sint doloremque atque aliquam necessitatibus! Dicta iure a quaerat architecto, inventore suscipit, voluptatem sed.</span>
+      <span>Optio fuga vero itaque soluta voluptates id recusandae eos, non similique quisquam consectetur autem, a dolore, molestiae eius! Praesentium dolorem adipisci itaque veritatis molestias quibusdam iusto, quisquam magni placeat nam.</span>
+      <span>Dolor voluptate amet consequatur iure, a veniam ipsam, nobis laboriosam doloribus non. Repudiandae officia aspernatur dolorum, eveniet assumenda recusandae repellendus! Dolorum accusantium harum perferendis iure quibusdam illo. Quasi, ullam, dignissimos.</span></p>
+      <div class="ratio ratio-16x9">
+        <iframe class=".embed-responsive-item" src="../dist/video/Placeholder.mp4"></iframe>
+      </div>
     </div>
     <foot></foot>
 
     <script type="text/javascript" src="../dist/js/index.js"></script>
   </body>
-</html>
+  </html>

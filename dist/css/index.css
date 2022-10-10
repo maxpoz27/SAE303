@@ -1,17 +1,6 @@
-.searchbar{
-  display: flex;
-  align-items: center;
-}
-button[type="submit"],#search{
-  max-height: 40px;
-}
 .logo{
   display: flex;
   justify-content: center;
-}
-.navsearch{
-  display: flex;
-  justify-content: space-between;
 }
 footer{
   width: 100%;
@@ -28,18 +17,6 @@ footer{
 .form,form{
   padding: 10px;
 }
-.gallerie{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.ligne{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-
-}
-
 article{
   display: flex;
   flex-direction: column;
