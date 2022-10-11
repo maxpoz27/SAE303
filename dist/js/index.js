@@ -1,7 +1,7 @@
 const {createApp} = Vue
 const footer = `
 <footer class="mt-auto">
-  <div class="container footer">
+  <div class="container d-flex justify-content-around align-items-center">
     <small><a href="">Mentions legales</a></small>
     <p> SAE303 Pozdnyakov, Vergeaud, Humeau </p>
     <div class="row">
@@ -77,7 +77,23 @@ const app = Vue.createApp({
 }).mount('body')
 
 
-
+$('button[type="submit"]').click(function(){
+  $.ajax({
+    url:"./index.php",
+    method:"post",
+    datatype :"json",
+  }).done(function(reponse){
+    let rep = JSON.stringify(reponse)
+    console.log(rep);
+    let main = $('.main')
+    main.append(reponse)
+  }).fail(function(error){
+      alert("La requête s'est terminée en échec. Infos : " + JSON.stringify(error));
+  })
+  .always(function(){
+    alert("Requête effectuée");
+    });
+})
 
 
 
@@ -86,6 +102,9 @@ actualites.each(function(){
   let article = $(this)
   let lien = article.children('a')
   let p = article.children('p')
+  lien.css('text-align','right')
+  lien.css('margin-right',"1em")
+  p.css('margin','0.5em')
   lien.click(function(){
     p.css('overflow','visible')
     p.css('white-space','normal')

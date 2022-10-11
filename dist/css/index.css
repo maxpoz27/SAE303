@@ -1,18 +1,9 @@
-.logo{
-  display: flex;
-  justify-content: center;
-}
 footer{
   width: 100%;
   background-color: #99958b;
   color: white;
   -webkit-box-shadow: 5px 10px 9px 5px rgba(0,0,0,0.5);
   box-shadow: 5px 10px 9px 5px rgba(0,0,0,0.5);
-}
-.footer{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 .form,form{
   padding: 10px;
