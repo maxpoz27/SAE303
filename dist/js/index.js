@@ -3,24 +3,16 @@ const footer = `
 <footer class="mt-auto">
   <div class="container d-flex justify-content-around align-items-center">
     <small><a href="">Mentions legales</a></small>
-    <p> SAE303 Pozdnyakov, Vergeaud, Humeau </p>
+    <p> SAE303 Humeau, Vergeaud, Pozdnyakov</p>
     <div class="row">
-      <a href="#">
-        <img src="../dist/img/instagram-32.svg" alt="LogoI">
-      </a>
-      <a href="#">
-        <img src="../dist/img/facebook-32.svg" alt="logoF">
-      </a>
-      <a href="#">
-        <img src="../dist/img/twitter-32.svg" alt="LogoT">
-      </a>
-      <a href="#">
-        <img src="../dist/img/youtube-32.svg" alt="LogoYT">
+      <a v-for="a in aa" :href="a.path">
+        <img :src="a.imgpath" :alt="a.alt">
       </a>
     </div>
   </div>
 </footer>
 `
+
 const articles = `
   <article :id="article.id"  v-for="article in articles">
     <img :src="article.image" alt="image d'article">
@@ -30,6 +22,7 @@ const articles = `
     </a>
   </article>
 `
+
 const app = Vue.createApp({
   data(){
     return {
@@ -46,7 +39,7 @@ const app = Vue.createApp({
     </a>
   </div>
   <nav class="d-flex justify-content-between border-bottom">
-    <a class="btn" v-for="tab in tabs"  :href="tab.path">{{tab.name}}</a>
+    <a class="btn" v-for="tab in tabs" :href="tab.path">{{tab.name}}</a>
   </nav>
   </header>
   `,
@@ -73,9 +66,18 @@ const app = Vue.createApp({
     }
   }
 }).component('foot',{
-  template : footer
+  template : footer,
+  data() {
+    return {
+      aa:[
+        {path:"#", imgpath:"../dist/img/instagram-32.svg", alt:"LogoI"},
+        {path:"#", imgpath:"../dist/img/facebook-32.svg", alt:"LogoF"},
+        {path:"#", imgpath:"../dist/img/twitter-32.svg", alt:"LogoT"},
+        {path:"https://www.youtube.com/watch?v=dQw4w9WgXcQ", imgpath:"../dist/img/youtube-32.svg", alt:"LogoYT"}
+      ]
+    }
+  }
 }).mount('body')
-
 
 $('button[type="submit"]').click(function(){
   $.ajax({
@@ -95,7 +97,24 @@ $('button[type="submit"]').click(function(){
     });
 })
 
+$( document ).ready(function() {
+  let reseaux = $('.reseaux')
+  reseaux.children().css('width','auto')
 
+  let afterRow = $('.row')
+  afterRow.children().css('width','auto')
+  afterRow.children().css('margin','3px')
+  afterRow.css('justify-content','center')
+
+  let video = $(".ratio").css('margin','1em auto')
+
+  let liens = $('a')
+  liens.each(function(){
+    if($(this).html()===document.title){
+      $(this).css({'text-decoration': 'underline'})
+    }
+  })
+})
 
 let actualites = $('article')
 actualites.each(function(){
@@ -113,17 +132,31 @@ actualites.each(function(){
   })
 })
 
-let liens = $('a')
-liens.each(function(){
-  if($(this).html()===document.title){
-    $(this).css({'text-decoration': 'underline'})
-  }
-})
-$( document ).ready(function() {
-  let reseaux = $('.reseaux')
-  reseaux.children().css('width','auto')
-  let afterRow = $('.row')
-  afterRow.children().css('width','auto')
-  afterRow.children().css('margin','3px')
-  afterRow.css('justify-content','center')
-})
+let li =$('li')
+li.parent().css('list-style-type', 'none')
+let fst =li.first()
+fst.addClass('active')
+let lst = li.last()
+let now = fst
+
+let myInterval=setInterval(changeNext,3000)
+
+function changeNext(){
+    li.removeClass('active')
+    now.toggleClass('active')
+    now = now.next()
+    if(now.length === 0){
+      now.toggleClass('active')
+      now = fst
+    }
+}
+
+function changePrev(){
+    li.removeClass('active')
+    now = now.prev()
+    now.toggleClass('active')
+    if(now.length === 0){
+      now = lst
+      now.toggleClass('active')
+    }
+}
