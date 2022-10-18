@@ -51,7 +51,7 @@ const app = Vue.createApp({
       tabs : [
         {name: 'Accueil', path: './index.html'},
         {name: 'Actualités', path: './actualites.html'},
-        {name: 'Gallerie', path: './gallerie.html'},
+        {name: 'Galerie', path: './galerie.html'},
         {name: 'Contact', path: './contact.html'}
       ]
     }
