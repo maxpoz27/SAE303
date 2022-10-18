@@ -6,28 +6,33 @@
   <title>Accueil</title>
   <script type="text/javascript" src="../dist/js/jquery.min.js"></script>
   <script type="text/javascript" src="../dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <link rel="stylesheet" href="../dist/css/index.css">
   <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../dist/css/index.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head>
 <body class="d-flex flex-column min-vh-100">
-  <navmenu></navmenu>
+  <navmenu></navmenu> <!-- la balise cree grace au vuejs qui remplace le menu (voir index.js) -->
   <div class="container main ">
-  <div id="carrousel" class="carousel" >
-    <ul>
-      <li><img src="../dist/img/plafond.png"/></li>
-      <li><img src="../dist/img/scene.png"/></li>
-      <li><img src="../dist/img/sieges.png"/></li>
-    </ul>
-    <button class="carousel-control-prev" type="button" onclick="changePrev()">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" onclick="changeNext()">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb border-bottom pb-4">
+        <li class="breadcrumb-item active" aria-current="page">Accueil</li>
+      </ol>
+    </nav>
+    <div id="carrousel" class="carousel">
+      <ul>
+        <li><img src="../dist/img/plafond.png"/></li>
+        <li><img src="../dist/img/scene.png"/></li>
+        <li><img src="../dist/img/sieges.png"/></li>
+      </ul>
+      <button class="carousel-control-prev" type="button" onclick="changePrev()">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" onclick="changeNext()">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
     <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, ab ut nobis iusto consequatur qui quos accusamus delectus sit enim inventore beatae, eligendi doloribus vitae modi repellat dignissimos est quaerat?</span>
       <span>Pariatur praesentium maiores maxime quae itaque repudiandae eaque, laboriosam, laudantium quia necessitatibus, tenetur ducimus iste, exercitationem veniam omnis eveniet magnam. Nulla at, tempore in expedita delectus adipisci. Magni aliquam, vero.</span>
@@ -38,8 +43,7 @@
         <iframe class=".embed-responsive-item" src="../dist/video/Placeholder.mp4"></iframe>
       </div>
     </div>
-    <foot></foot>
-
+    <foot></foot> <!-- la balise cree grace au vuejs qui remplace le footer (voir index.js) -->
     <script type="text/javascript" src="../dist/js/index.js"></script>
   </body>
   </html>

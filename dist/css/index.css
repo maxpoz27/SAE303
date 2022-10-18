@@ -23,8 +23,11 @@ article>p{
   margin-top: 3em;
   margin-bottom: 3em;
 }
-
-li{
+#carrousel>ul{
+  padding-inline-start: 0;
+  padding-left : 0;
+}
+ul>li{
   display: none;
 }
 .active{
