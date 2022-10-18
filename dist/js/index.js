@@ -1,11 +1,12 @@
 //template pour le footer
 //on passe des donnees du component foot pour les utliser avec le template
 const footer = `
-<footer class="mt-auto">
-  <div class="container d-flex justify-content-around align-items-center">
+<footer class="mt-auto d-flex">
+  <div class="container d-flex justify-content-around align-items-center ">
     <small><a href="mentions.html">Mentions légales</a></small>
-    <p> SAE303 Humeau, Vergeaud, Pozdnyakov</p>
-    <div class="row">
+    <p class="text-center m-0"> SAE303 Humeau, Vergeaud, Pozdnyakov <br>  Copyright (c) 2022 Copyright Holder All Rights Reserved.</p>
+
+    <div class="row flex-md-nowrap">
       <a v-for="a in aa" target="_blank" rel="noreferrer noopener" :href="a.path">
         <img :src="a.imgpath" :alt="a.alt">
       </a>
@@ -113,7 +114,6 @@ $( document ).ready(function() {
   afterRow.children().css('margin','3px')
   //tous les images se mettent dans le centre de la page
   afterRow.css('justify-content','center')
-
   //on ajout la margin a la video de la page d'accueil
   $(".ratio").css('margin','1em auto')
 
