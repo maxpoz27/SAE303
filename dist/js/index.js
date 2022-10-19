@@ -18,7 +18,7 @@ const footer = `
 //on passe des donnees du component articles pour les utliser avec le template
 const articles = `
   <article :id="article.id"  v-for="article in articles">
-    <img height="600":src="article.image" class="border-end" alt="image d'article">
+    <img :src="article.image" class="border-end" alt="image d'article">
     <p>{{ article.description }}</p>
     <a :key="article.id" :id="article.id" :href='article.path+article.id'>
     lire la suite
@@ -133,10 +133,12 @@ actualites.each(function(){
   let p = article.children('p')
   let img = article.children('img')
   lien.css('text-align','right')
+  img.css('height',"200px")
   lien.css('margin-right',"1em")
   p.css('margin','0.5em')
   article.css('margin','0.5em')
   lien.click(function(){ //en cliquant sur chaque lien l'article va prendre sa forme de base
+    img.css('height',"auto")
     p.css('overflow','visible')
     p.css('white-space','normal')
     article.css('height','auto')
