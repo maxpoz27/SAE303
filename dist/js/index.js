@@ -161,7 +161,9 @@ let lst = li.last()
 //si on met la souris sur la carroussel l'images arretent de changer jusqu'a moment qu'on enleve la souris de carroussel
 $('#carrousel').hover(function(){
   clearInterval(myInterval)
+  myInterval=setInterval(changeNext,2000)
 },function(){
+  clearInterval(myInterval)
   myInterval=setInterval(changeNext,2000)
 })
 
